@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
 import Radium, { StyleRoot } from "radium";
-
+//using radium in this module
 class App extends Component {
   state = {
     //this is an array of person
