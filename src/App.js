@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
-import Radium, { StyleRoot } from "radium";
 //using radium in this module
 // This covers basic section of react , need to add advance topic as well 
 class App extends Component {
@@ -66,7 +65,6 @@ class App extends Component {
       border: "1px solid blue",
       padding: "8px",
       cursor: "pointer",
-      ":hover": { backgroundColor: "lightgreen", color: "black" }
     };
 
     let persons = null;
@@ -87,9 +85,8 @@ class App extends Component {
         </div>
       );
       style.backgroundColor = "red";
-      style[":hover"] = { backgroundColor: "salmon", color: "black" };
-    } else {
-    }
+     
+    } 
 
     //let classes = ["red", "bold"].join(" "); // this is valid css class , "red bold"
     const classes = []; // creating an empty arry
@@ -101,7 +98,7 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
+      
         <div className="App">
           <h1> hello react</h1>
           <p className={classes.join(" ")}> This is really working !</p>
@@ -119,12 +116,11 @@ class App extends Component {
           </button>
           {persons}
         </div>
-      </StyleRoot>
     );
   }
 }
 
-export default Radium(App);
+export default App;
 
 function App1() {
   return (

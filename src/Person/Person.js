@@ -1,16 +1,11 @@
 import React from "react";
 import "./Person.css"; // need extension here , only omit for java script file
-import Radium from "radium";
+
 
 const person = props => {
-  const style = {
-    //redium will parse below
-    "@media (min-width: 500px)": {
-      width: "450px"
-    }
-  };
+  
   return (
-    <div className="Person" style={style}>
+    <div className="Person" >
       <p onClick={props.click}>
         I am a {props.name} and {props.age} years old
       </p>
@@ -20,4 +15,4 @@ const person = props => {
   );
 };
 
-export default Radium(person);
+export default person;
