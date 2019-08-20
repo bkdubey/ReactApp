@@ -420,6 +420,8 @@ module.exports = function(webpackEnv) {
               exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
+                modules:true,
+                localIdentName:'[name]__[local]__[hase:base64:5]',  // for css ,create unique name 
                 sourceMap: isEnvProduction && shouldUseSourceMap,
               }),
               // Don't consider CSS imports dead code even if the

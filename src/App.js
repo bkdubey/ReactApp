@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+import classes from "./App.css"; // the name is up to you, you can give style instead of classes
 import Person from "./Person/Person";
 //using radium in this module
-// This covers basic section of react , need to add advance topic as well 
+// This covers basic section of react , need to add advance topic as well
 class App extends Component {
   state = {
     //this is an array of person
@@ -58,16 +58,8 @@ class App extends Component {
     this.setState({ showPersons: !doesShow });
   };
   render() {
-    const style = {
-      backgroundColor: "green",
-      color: "white",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "8px",
-      cursor: "pointer",
-    };
-
     let persons = null;
+    let btnClass='';
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -84,26 +76,24 @@ class App extends Component {
           })}
         </div>
       );
-      style.backgroundColor = "red";
-     
-    } 
+      btnClass=classes.Red
+    }
 
     //let classes = ["red", "bold"].join(" "); // this is valid css class , "red bold"
-    const classes = []; // creating an empty arry
+    const assignedClasses = []; // creating an empty arry
     if (this.state.persons.length <= 2) {
-      classes.push("red"); // classes=['red']
+      assignedClasses.push(classes.red); // classes=['red']
     }
     if (this.state.persons.length <= 1) {
-      classes.push("bold"); // classes=['red','bold']
+      assignedClasses.push(classes.bold); // classes=['red','bold']
     }
 
     return (
-      
-        <div className="App">
-          <h1> hello react</h1>
-          <p className={classes.join(" ")}> This is really working !</p>
-          <button style={style} onClick={this.togglePersonHandler}>
-            {/* this is comment
+      <div className={classes.App}>
+        <h1> hello react</h1>
+        <p className={assignedClasses.join(" ")}> This is really working !</p>
+        <button className ={btnClass} onClick={this.togglePersonHandler}>
+          {/* this is comment
           onClick={this.switchNameHandler.bind(this, "brajkishore")
           or can use - 
             () => this.switchNameHandler("BrajKishore!")
@@ -112,10 +102,10 @@ class App extends Component {
 
             recommended :- bind syntax
           */}{" "}
-            Toggle person{" "}
-          </button>
-          {persons}
-        </div>
+          Toggle person{" "}
+        </button>
+        {persons}
+      </div>
     );
   }
 }
