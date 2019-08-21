@@ -59,7 +59,7 @@ class App extends Component {
   };
   render() {
     let persons = null;
-    let btnClass='';
+    let btnClass = "";
     if (this.state.showPersons) {
       persons = (
         <div>
@@ -76,7 +76,7 @@ class App extends Component {
           })}
         </div>
       );
-      btnClass=classes.Red
+      btnClass = classes.Red;
     }
 
     //let classes = ["red", "bold"].join(" "); // this is valid css class , "red bold"
@@ -92,7 +92,7 @@ class App extends Component {
       <div className={classes.App}>
         <h1> hello react</h1>
         <p className={assignedClasses.join(" ")}> This is really working !</p>
-        <button className ={btnClass} onClick={this.togglePersonHandler}>
+        <button className={btnClass} onClick={this.togglePersonHandler}>
           {/* this is comment
           onClick={this.switchNameHandler.bind(this, "brajkishore")
           or can use - 
