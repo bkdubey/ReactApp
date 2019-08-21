@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import classes from "./App.css"; // the name is up to you, you can give style instead of classes
-import Person from "./Person/Person";
+import Person from "../components/Persons/Person/Person";
 //using radium in this module
 // This covers basic section of react , need to add advance topic as well
 class App extends Component {
